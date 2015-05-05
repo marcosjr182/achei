@@ -1,0 +1,13 @@
+<div class="container">
+  <h3>Achados&Perdidos</h3>
+    <% @items.each do |item| %>    
+      <a href="items/<%= item.id %>" class="card col-md-3">
+        <div class="description">
+          <%= item.name %>
+          <span class="place"><%= item.place %></span>
+        </div>
+        <img src="http://placehold.it/200x200"  class="img">
+      </a>
+    <% end %>
+
+</div>  

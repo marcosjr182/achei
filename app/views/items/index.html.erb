@@ -1,13 +1,17 @@
+<h3>Achados&Perdidos</h3>
 <div class="container">
-  <h3>Achados&Perdidos</h3>
     <% @items.each do |item| %>    
-      <a href="items/<%= item.id %>" class="card col-md-3">
-        <div class="description">
-          <%= item.name %>
-          <span class="place"><%= item.place %></span>
+      <div class="card col-md-3">
+        
+        <div class="item-card col-md-12">
+            <%= link_to image_tag("http://placehold.it/200x200", class: "item-card-img"), item_url(item) %>  
+          <div class="description">
+            <span class="item-name col-md-12"><%= item.name %></span>  
+            <span class="item-place col-md-12"><%= icon('map-marker') + "  "+ item.place.name %></span>
+          </div>
+        
         </div>
-        <img src="http://placehold.it/200x200"  class="img">
-      </a>
+        </div>
     <% end %>
 
 </div>  

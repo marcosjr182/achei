@@ -17,9 +17,10 @@
 //= require_tree .
 
 
-  $('.card').hover(function() {
-    $('.description').addClass( "open" );
-  }, function() {
-    $('.description').removeClass( "open" );
+var ready = function(){
   
-  });
+  
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

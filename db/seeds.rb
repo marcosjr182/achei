@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+(1...10).each do |i|
+  place = Place.create(name: "IMD #{i}", longitude: 40.7127837 , latitude:-74.0059413)
+  Item.create(name: "Objeto Voador #{i}", place: place, category:"celular")
+end

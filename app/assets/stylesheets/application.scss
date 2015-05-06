@@ -17,18 +17,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
+@import "font-awesome";
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('public/assets/fontawesome-webfont.eot?v=4.0.3');
-  src: url('public/assets/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), 
-  url('public/assets/fontawesome-webfont.woff?v=4.0.3') format('woff'),
-  url('public/assets/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), 
-  url('public/assets/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+  src: url('<%= asset_path("fontawesome-webfont.eot")%>?v=4.2.0');
+  src: url('<%= asset_path("fontawesome-webfont.eot")%>?#iefix&v=4.2.0') format('embedded-opentype'),
+       url('<%= asset_path("fontawesome-webfont.woff")%>?v=4.2.0') format('woff'),
+       url('<%= asset_path("fontawesome-webfont.ttf")%>?v=4.2.0') format('truetype'),
+       url('<%= asset_path("fontawesome-webfont.svg")%>?v=4.2.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-
 
 body{
   font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;

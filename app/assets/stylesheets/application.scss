@@ -21,11 +21,11 @@
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('<%= asset_path("fontawesome-webfont.eot")%>?v=4.2.0');
-  src: url('<%= asset_path("fontawesome-webfont.eot")%>?#iefix&v=4.2.0') format('embedded-opentype'),
-       url('<%= asset_path("fontawesome-webfont.woff")%>?v=4.2.0') format('woff'),
-       url('<%= asset_path("fontawesome-webfont.ttf")%>?v=4.2.0') format('truetype'),
-       url('<%= asset_path("fontawesome-webfont.svg")%>?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('<%= asset_path("fontawesome-webfont-e6b433023d7470632630e173005df9d7.eot")%>?v=4.2.0');
+  src: url('<%= asset_path("fontawesome-webfont-e6b433023d7470632630e173005df9d7.eot")%>?#iefix&v=4.2.0') format('embedded-opentype'),
+       url('<%= asset_path("fontawesome-webfont-14a0acb0e78c3989db7dee7a8618437d.woff")%>?v=4.2.0') format('woff'),
+       url('<%= asset_path("fontawesome-webfont-288e0016f45a8d89cdbc1d5631af65d2.ttf")%>?v=4.2.0') format('truetype'),
+       url('<%= asset_path("fontawesome-webfont-c988f69c029fed4491ae10c45ad020a6.svg")%>?v=4.2.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }

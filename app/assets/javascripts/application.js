@@ -21,23 +21,22 @@
 
 var ready = function(){
  
-handler = Gmaps.build('Google');
-var lat = $('#map').data('lat');
-var longitude = $('#map').data('long');
-var name = $('#map').data('name');
+  handler = Gmaps.build('Google');
+  var lat = $('#map').data('lat');
+  var longitude = $('#map').data('long');
+  var name = $('#map').data('name');
 
-console.log(name);
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  var markers = handler.addMarkers([
-      {
-        "lat": lat,
-        "lng": longitude,
-        "infowindow": name
-      }
-    ]);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-}); 
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    var markers = handler.addMarkers([
+        {
+          "lat": lat,
+          "lng": longitude,
+          "infowindow": name
+        }
+      ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  }); 
   
 }
 

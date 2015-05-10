@@ -7,6 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 (1...10).each do |i|
-  place = Place.create(name: "IMD #{i}", longitude: 40.7127837 , latitude:-74.0059413)
+  place = Place.create(name: "IMD #{i}", latitude:-5.8325565, longitude: -35.205342 )
   Item.create(name: "Objeto Voador #{i}", place: place, category:"celular")
 end

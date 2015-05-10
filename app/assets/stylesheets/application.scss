@@ -35,7 +35,7 @@ body{
   margin-bottom: 10px;
 }
 .item-card{
-  background: $white;
+  background: #FCFFF9;
   padding:0;
   position:relative;
   box-shadow: 0px 0px 2px $black;
@@ -49,7 +49,19 @@ body{
 .description{
   padding-left:5px;
   padding-right:5px;
-  margin-top:10px;
+  padding-top:10px;
+  &[data-category="achados"]{ 
+    border-top:2px solid $green;
+  }
+  &.venda{ 
+    border-top:2px solid orange;
+  }
+  &.aluguel{ 
+    border-top:2px solid blue;
+  }
+  &.doacao{ 
+    border-top:2px solid yellow;
+  }
   margin-bottom: 10px;
   text-align: center;
   .item-name{
@@ -62,6 +74,12 @@ body{
   }
 }
 
+.img-full{
+  width: 100%;
+}
+.container{
+  margin-bottom: 30px;
+}
 .ap-header {
   padding:0;
   vertical-align: middle;

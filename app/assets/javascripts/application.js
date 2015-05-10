@@ -14,11 +14,30 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require underscore
+//= require gmaps/google
 //= require_tree .
 
 
 var ready = function(){
-  
+ 
+handler = Gmaps.build('Google');
+var lat = $('#map').data('lat');
+var longitude = $('#map').data('long');
+var name = $('#map').data('name');
+
+console.log(name);
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  var markers = handler.addMarkers([
+      {
+        "lat": lat,
+        "lng": longitude,
+        "infowindow": name
+      }
+    ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+}); 
   
 }
 

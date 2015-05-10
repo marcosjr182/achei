@@ -10,6 +10,11 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @map = Gmaps4rails.build_markers(@item.place) do |place, marker|
+      marker.lat place.latitude
+      marker.lng place.longitude
+    end
+
   end
 
   # GET /items/new

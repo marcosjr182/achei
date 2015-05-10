@@ -2,20 +2,21 @@
   
   <div class="row">
     <div class="col-md-3">
-      <img src="http://placehold.it/200x200" class="img" alt="">
-      <div class="mapa">mapa</div>
+      <img src="http://placehold.it/200x200" class="img-full" alt="">
+      <div id="map" data-lat="<%= @item.place.latitude %>" data-long="<%= @item.place.longitude %>" data-name="<%= @item.place.name %>" style='width: 100%; height: 200px;'></div>
     </div>
+
     <div class="col-md-9 item-details">
-      <h4><%= @item.name %></h4>
+      <h3><%= @item.name %></h3>
+      
       <span class="item-description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, iusto sint perferendis odio fugit assumenda ut beatae deleniti et autem porro quasi pariatur hic fugiat sapiente recusandae natus eius nesciunt.
       </span>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6 item-options pull-right">
-      <a href="" class="btn btn-success pull-right">Achei</a>
+      
+      <div class="col-md-12 item-options bottom">
+        <a href="" class="btn btn-success pull-right">Achei</a>
+      </div>
+    
     </div>
   </div>
 

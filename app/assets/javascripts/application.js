@@ -14,31 +14,39 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require underscore
+//= require underscore-min
 //= require gmaps/google
 //= require_tree .
 
 
 var ready = function(){
  
-  handler = Gmaps.build('Google');
-  var lat = $('#map').data('lat');
-  var longitude = $('#map').data('long');
-  var name = $('#map').data('name');
 
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    var markers = handler.addMarkers([
-        {
-          "lat": lat,
-          "lng": longitude,
-          "infowindow": name
-        }
-      ]);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-  }); 
   
 }
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
+function create_map(place){
+  
+  handler = Gmaps.build('Google');
+  
+  handler.buildMap(
+    { provider: {
+      disableDefaultUI: true,
+      scrollwheel: false,
+      zoom: 8
+    }, internal: {id: 'map'}}, function(){
+    var markers = handler.addMarkers([
+      {
+        "lat": place.latitude,
+        "lng": place.longitude,
+        "infowindow": place.name
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(18);
+  }); 
+};

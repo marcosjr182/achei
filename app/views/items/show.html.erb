@@ -33,4 +33,10 @@
     </div>  
   </div>
 
+<%= javascript_tag do %>
+  $(document).ready(function(){
+    var place = <%= @item.place.to_json.html_safe %>;
+    create_map(place);
+  });
+<% end -%>
     

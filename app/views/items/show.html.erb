@@ -1,23 +1,32 @@
-<div class="container">
-  
-  <div class="row">
-    <div class="col-md-3">
-      <img src="http://placehold.it/200x200" class="img-full" alt="">
-      <div id="map" data-lat="<%= @item.place.latitude %>" data-long="<%= @item.place.longitude %>" data-name="<%= @item.place.name %>" style='width: 100%; height: 200px;'></div>
-    </div>
 
-    <div class="col-md-9 item-details">
+    <div class="row">
+      <div id="map" data-lat="<%= @item.place.latitude %>" data-long="<%= @item.place.longitude %>" data-name="<%= @item.place.name %>" style='width: 100%; height: 170px;' class="col-md-12"></div>
+    </div>
+    
+  <div class='row'> 
+    <div class="col-md-3 no-margin">
+      <img src="http://placehold.it/200x200" class="img-full" alt="">  
+    </div> 
+
+    <div class="col-md-7 item-details">
       <h3><%= @item.name %></h3>
       
-      <span class="item-description">
+      <div class="item-description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, iusto sint perferendis odio fugit assumenda ut beatae deleniti et autem porro quasi pariatur hic fugiat sapiente recusandae natus eius nesciunt.
-      </span>
-      
-      <div class="col-md-12 item-options bottom">
-        <a href="" class="btn btn-success pull-right">Achei</a>
       </div>
-    
+      
+      <div class="item-user pull-right">
+        <img src="http://placehold.it/50x50" class="img-rounded" alt="">
+        <span> Fulano da Silva </span>
+      </div>
+      
     </div>
+
+    <div class="col-md-2 pull-right item-actions">
+        <span class="h5 col-md-12 text-center">opções</span>
+        <a href="" class="btn btn-success pull-right">Achei</a>
+        <a href="" class="btn btn-primary pull-right">Compartilhar</a>
+    </div>  
   </div>
 
-</div>
+    

@@ -15,10 +15,10 @@
     <%= f.input :name %><br>
   </div>
   <div class="field">
-    <%= f.input :place, collection: @places %><br>
+    <%= f.association :place %><br>
   </div>
   <div class="field">
-    <%= f.input :category %><br>
+    <%= f.association :category %><br>
   </div>
   <div class="actions">
     <%= f.submit %>

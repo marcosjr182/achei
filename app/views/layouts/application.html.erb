@@ -23,10 +23,8 @@
 </nav>
 
 <div class="page container">
-  <div class="row text-center ap-header">
-    <h2 class="col-md-12">Achados&Perdidos</h2>
-  </div>
-
+  <%= category_header(@category.id) unless @category.nil? %>
+  
   <%= yield %>
   
 </div>

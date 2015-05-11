@@ -91,16 +91,20 @@ body{
 .container{
   margin-bottom: 30px;
 }
-.ap-header {
+.header {
   padding:0;
-  background: $green;
   h2 {
     color: #fff;
     margin-top: 15px;
     z-index: 2;
   }
 }
-
+.ap{
+  background: $green;
+}
+.venda{
+  background: #358DFF;
+}
   
 .item-details{
   padding-top:15px;
@@ -116,7 +120,7 @@ body{
 }
 
 .navbar{
-  background:$green;
+  background:gray;
   border:0;
   border-radius:0;
   margin:0;

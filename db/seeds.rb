@@ -17,3 +17,5 @@ Category.create(name: "Doação")
   place = Place.create(name: "IMD #{i}", latitude:-5.8325565, longitude: -35.205342 )
   Item.create(name: "Objeto Voador #{i}", place: place)
 end
+
+User.create(email:"admin@admin.com",password:"admin")

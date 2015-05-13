@@ -6,12 +6,12 @@ gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 gem 'rails_12factor', group: :production
 
-gem 'pg'
+gem 'pg', group: :production
 
-gem 'sqlite3', group: :development
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.3.4'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -32,6 +32,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'gmaps4rails'
+
+
+group :development do
+  gem "better_errors"
+  gem 'sqlite3'
+end
+
+gem 'devise'
+gem 'omniauth-facebook'
 
 gem 'underscore-rails'
 

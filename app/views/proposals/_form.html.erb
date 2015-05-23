@@ -3,9 +3,9 @@
 
   <div class="form-inputs">
     <%= f.input :description %>
-    <%= f.association :owner %>
-    <%= f.association :buyer %>
-    <%= f.association :item %>
+    <%= f.hidden_field :owner_id, value: @item.user_id %>
+    <%= f.hidden_field :buyer_id, value: current_user.id %>
+    <%= f.hidden_field :item_id, value: @item %>
   </div>
 
   <div class="form-actions">

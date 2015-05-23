@@ -1,4 +1,4 @@
-
+<div class="top-margin page container">
     <div class="row">
       <div id="map" data-lat="<%= @item.place.latitude %>" data-long="<%= @item.place.longitude %>" data-name="<%= @item.place.name %>" style='width: 100%; height: 170px;' class="col-md-12"></div>
     </div>
@@ -26,13 +26,14 @@
     <div class="col-md-2 pull-right item-actions">
         <span class="h5 col-md-12 text-center">opções</span>
         <ul class="col-md-12">
-          <li><a href="" class="btn btn-success col-md-12">Achei</a></li>
+          <li><%= link_to "Achei", new_proposal_path(item_id: @item.id), :remote => true, data: { toggle: "modal", target:'#modal'}, class:"btn btn-success col-md-12" %></li>
           <li><a href="" class="btn btn-primary col-md-12 pull-right">Compartilhar</a></li>
         </ul>
         
         
     </div>  
   </div>
+</div>
 
 <%= javascript_tag do %>
   $(document).ready(function(){
@@ -40,4 +41,21 @@
     create_map(place);
   });
 <% end -%>
+
     
+<div class="modal fade" id="modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+        <h3 id="myModalLabel"></h3>
+      </div>
+      <div class="modal-body new-proposal-modal">
+        <%= render "proposals/form" %>
+      </div>
+      <div class="modal-footer">
+        <button aria-hidden="true" class="btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

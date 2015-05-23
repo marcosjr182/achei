@@ -23,7 +23,7 @@ $green: #6DA580;
 $home_green: #009688;
 $dark_green: #4C7251;
 $black: #454851;
-$white: #F2FDE1;
+$white: #F0EEED;
 
 body{
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -32,8 +32,11 @@ body{
 .center{
   text-align: center;
 }
-.page{  
-  margin-top: 80px;
+.top-margin{  
+  margin-top: 50px;
+}
+.page{
+  background:#F0EEED;
 }
 .no-margin{
   margin-left: -15px;
@@ -119,9 +122,11 @@ body{
     color: $black;
   }
 }
-
+.hide {
+  display: none;
+}
 .navbar{
-  background:transparent;
+  background: $home_green;
   border:0;
   border-radius:0;
   margin:0;
@@ -133,6 +138,9 @@ body{
   .navbar-nav li a {
     color: $white;
   }
+}
+.navbar-shadow{
+  box-shadow: 0 0 3px #232323;
 }
 
 h1,
@@ -149,23 +157,17 @@ h6,
     letter-spacing: 1px;
 }
 
-.bg-home{
-  position:absolute;
-  height: 100%;
-  background: #009688;
-  vertical-align: middle;
-}
 .category-wrap{
-  vertical-align: middle;
-  margin-top: 25%;
   
   .category{
     font-size: 2.2em;
     margin: 5px 5px;
     border-radius:2px;
-    padding:20px 5px;
+    padding:50px 5px;
     border: 1px solid #dcdcdc;
-    background:#dcdcdc;
     text-align: center;
+    a{
+      color: $white;
+    }
   }
 }

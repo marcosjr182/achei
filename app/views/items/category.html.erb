@@ -1,5 +1,5 @@
-<div class="page container">
-  <%= "<h4 class='center'>Não há items cadastrados no momento.</h4>".html_safe if @items.empty? %>
+<div class="container">
+  <%= "<h4 class='center'>Não há items cadastrados no momento.</h4>".html_safe if @items.empty? || @items.nil? %>
   <% @items.each do |item| %>    
     <div class="card col-md-3">  
       <div class="item-card col-md-12">

@@ -20,7 +20,7 @@
 
 
 var ready = function(){
- 
+  $("#modal").appendTo('body');
 
   
 }
@@ -50,3 +50,11 @@ function create_map(place){
     handler.getMap().setZoom(18);
   }); 
 };
+
+$(window).scroll(function() {
+  if ($(this).scrollTop() == 0) {
+    $('.navbar').removeClass('navbar-shadow')
+  } else {
+    $('.navbar').addClass('navbar-shadow');
+  }
+});

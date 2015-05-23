@@ -1,7 +1,8 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
 
-  resources :proposals
+  resources :proposals, :except => [:new]
+  get "proposals/new/:item_id", to: "proposals#new", as: "new_proposal"
 
   devise_for :users
   

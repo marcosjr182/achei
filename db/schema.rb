@@ -11,24 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513153702) do
+ActiveRecord::Schema.define(version: 20150513152916) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
-    t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "items", force: true do |t|
     t.string   "name"
-    t.string   "place"
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "place_id"
-    t.string   "category_id"
+    t.integer  "category_id"
   end
 
+  add_index "items", ["category_id"], name: "index_items_on_category_id"
   add_index "items", ["place_id"], name: "index_items_on_place_id"
 
   create_table "places", force: true do |t|
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150513153702) do
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.string   "name",                   default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -52,8 +53,6 @@ ActiveRecord::Schema.define(version: 20150513153702) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -18,4 +18,4 @@ Category.create(name: "Doação")
   Item.create(name: "Objeto Voador #{i}", place: place)
 end
 
-User.create(email:"admin@admin.com",password:"admin")
+User.create(name: "Usuario", email: "admin@admin.com", password: "adminadmin")

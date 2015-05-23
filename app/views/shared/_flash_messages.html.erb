@@ -1,0 +1,17 @@
+<% type = {'notice' => 'success', 'error' => 'danger'} %> 
+<% unless flash.empty? %>
+  <div class="container">
+  <div class="row">
+    
+    <% flash.each do |key, value| %>
+      <%= content_tag :div, class: "col-md-12 alert alert-#{type[key]} alert-dismissable" do %>
+        <%= value %>
+        <%= content_tag :button, type: 'button', data: { dismiss: 'alert'}, class: 'close' do %>
+          <%= content_tag :span, '&times;'.html_safe, aria: { hidden: 'true'} %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+  </div>
+  </div> 
+<% end %>

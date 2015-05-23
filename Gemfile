@@ -33,6 +33,7 @@ gem 'spring',        group: :development
 
 gem 'gmaps4rails'
 
+gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development do
   gem "better_errors"

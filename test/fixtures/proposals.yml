@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  owner_id: 
+  buyer_id: 
+  item_id: 
+
+two:
+  description: MyText
+  owner_id: 
+  buyer_id: 
+  item_id: 

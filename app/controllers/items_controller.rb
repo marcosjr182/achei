@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:show]
@@ -10,27 +11,32 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @category = @item.category
   end
 
   # GET /items/new
   def new
     @item = Item.new
     @places = Place.all
-    @categories = Category.all
+  end
+
+  def category
+    if params[:tag_list].include? "Achados&Perdidos"
+      @items = Item.tagged_with(["achados","perdidos"], any: true)
+    elsif params[:tag_list].include? "Classificados"
+      @items = Item.tagged_with(["achados","perdidos"], exclude: true)
+    end
   end
 
   # GET /items/1/edit
   def edit
     @places = Place.all
-    @categories = Category.all
   end
 
   # POST /items
   # POST /items.json
   def create
     @item = Item.new(item_params)
-
+    
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
@@ -74,6 +80,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :place_id, :category_id)
+      params.require(:item).permit(:name, :place_id, :user_id, :tag_list)
     end
 end

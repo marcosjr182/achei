@@ -1,14 +1,17 @@
+# -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
+
+  resources :proposals
 
   devise_for :users
   
-  resources :categories
-
   resources :places
 
   resources :items
 
-  root to: "items#index"
+  get "/category/:tag_list", to: "items#category", as: "category"
+
+  root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

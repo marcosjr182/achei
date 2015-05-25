@@ -142,6 +142,9 @@ body{
 .navbar-shadow{
   box-shadow: 0 0 3px #232323;
 }
+#dropdown-messages {
+  background:transparent; 
+}
 
 h1,
 h2,
@@ -171,3 +174,9 @@ h6,
     }
   }
 }
+
+.comments{
+  border-left: 1px solid #dcdcdc;
+  min-height: 100%;
+}
+

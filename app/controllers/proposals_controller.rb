@@ -16,8 +16,7 @@ class ProposalsController < ApplicationController
   def new
     @proposal = Proposal.new
     @item = Item.find(params[:item_id])
-    respond.js 
-    respond_with(@proposal)
+    respond_to { |format| format.js } 
   end
 
   def edit

@@ -18,8 +18,26 @@
     <ul class="nav navbar-nav pull-right">
       <li><%= link_to "Achados&Perdidos", category_path("Achados&Perdidos") %></li>
       <li><%= link_to "Classificados", category_path("Classificados") %></li>
-      <li><%= link_to "Cadastro", category_path("Classificados") %></li>
-      <li><%= link_to "Entrar", category_path("Classificados") %></li>
+      <% if user_signed_in? %>
+        <li><a id="dropdown-messages" data-toggle="dropdown" aria-expanded="true"> Mensagens<span   class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="">
+          <% @messages.each do |m| %>
+            <li role="presentation">
+              <%= link_to m.body.first(20)+"...", proposals_path(m) %>
+            </li>
+          <% end %>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+        </ul>
+        </li>
+
+        <li><%= link_to "Meu Perfil" , "#" %></li>
+        <li><%= link_to "Sair" , destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Entrar", category_path("Classificados") %></li>
+        <li><%= link_to "Cadastro", category_path("Classificados") %></li>
+      <% end %>
     </ul>
   </nav>
   

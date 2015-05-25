@@ -35,6 +35,8 @@ gem 'gmaps4rails'
 
 gem 'acts-as-taggable-on', '~> 3.4'
 
+gem 'acts-as-messageable'
+
 group :development do
   gem "better_errors"
   gem 'sqlite3'

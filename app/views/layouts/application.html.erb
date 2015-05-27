@@ -35,8 +35,8 @@
         <li><%= link_to "Meu Perfil" , "#" %></li>
         <li><%= link_to "Sair" , destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to "Cadastro", category_path("Classificados") %></li>
-        <li><%= link_to "Entrar", category_path("Classificados") %></li>
+        <li><%= link_to "Cadastro", new_user_registration_path %></li>
+        <li><%= link_to "Entrar", new_user_session_path %></li>
       <% end %>
     </ul>
   </nav>

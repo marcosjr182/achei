@@ -5,8 +5,8 @@
   </header>
    <% @items.each do |item| %>    
     <div class="card col-md-3">  
-      <div class="item-card col-md-12">
-         <div class="category-header <%= item.tag_list[0] %>"></div>
+      <div class="item-card col-md-12 <%= ActiveSupport::Inflector.transliterate(item.tag_list[0].to_s) %>">
+         <div class="category-header <%= ActiveSupport::Inflector.transliterate(item.tag_list[0].to_s) %>"></div>
           <%= link_to image_tag("http://placehold.it/200x200", class: "item-card-img"), item_url(item) %>  
         <div class="description col-md-12">
           <span class="item-name col-md-12"><%= item.name %></span>  

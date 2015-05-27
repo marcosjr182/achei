@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show]
+  before_action :authenticate_user!, except: [:category]
   # GET /items
   # GET /items.json
   def index

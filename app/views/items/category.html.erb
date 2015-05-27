@@ -1,8 +1,12 @@
 <div class="container">
   <%= "<h4 class='center'>Não há items cadastrados no momento.</h4>".html_safe if @items.empty? || @items.nil? %>
-  <% @items.each do |item| %>    
+  <header class="col-md-12 page-header">
+    <h2><%= params[:tag_list] %></h2>
+  </header>
+   <% @items.each do |item| %>    
     <div class="card col-md-3">  
       <div class="item-card col-md-12">
+         <div class="category-header <%= item.tag_list[0] %>"></div>
           <%= link_to image_tag("http://placehold.it/200x200", class: "item-card-img"), item_url(item) %>  
         <div class="description col-md-12">
           <span class="item-name col-md-12"><%= item.name %></span>  

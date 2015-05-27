@@ -21,13 +21,14 @@
 
 $green: #6DA580;
 $home_green: #009688;
+$gray: #EEEEEE;
 $dark_green: #4C7251;
 $black: #454851;
 $white: #F0EEED;
 
 body{
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  background: $home_green;
+  background: $gray;
 }
 .center{
   text-align: center;
@@ -37,6 +38,9 @@ body{
 }
 .page{
   background:#F0EEED;
+}
+.page-header{
+  margin-bottom: 0;
 }
 .no-margin{
   margin-left: -15px;
@@ -51,8 +55,10 @@ body{
 .item-card{
   background: #FCFFF9;
   padding:0;
+  padding-bottom: 5px;
   position:relative;
   box-shadow: 0px 0px 2px $black;
+  border-radius: 2px;
 }
 .item-card-img{
   margin-right: -5px;
@@ -64,18 +70,6 @@ body{
   padding-left:5px;
   padding-right:5px;
   padding-top:10px;
-  &[data-category="achados"]{ 
-    border-top:2px solid $green;
-  }
-  &.venda{ 
-    border-top:2px solid orange;
-  }
-  &.aluguel{ 
-    border-top:2px solid blue;
-  }
-  &.doacao{ 
-    border-top:2px solid yellow;
-  }
   margin-bottom: 10px;
   text-align: center;
   .item-name{
@@ -159,18 +153,36 @@ h6,
     font-weight: 700;
     letter-spacing: 1px;
 }
-
-.category-wrap{
+.category-header{
+  height: 5px;
   
+  &.perdidos{ 
+    background: green;
+  }
+  &.achados{ 
+    background: olive;
+  }
+  &.venda{ 
+    background: orange;
+  }
+  &.aluguel{ 
+    background: blue;
+  }
+  &.doacao{ 
+    background: yellow;
+  }
+}
+.category-wrap{
+  margin-top: 6em;
   .category{
     font-size: 2.2em;
     margin: 5px 5px;
     border-radius:2px;
     padding:50px 5px;
-    border: 1px solid #dcdcdc;
+    border: 1px solid $home_green;
     text-align: center;
     a{
-      color: $white;
+      color: $home_green;
     }
   }
 }

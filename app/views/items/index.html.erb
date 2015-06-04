@@ -1,4 +1,6 @@
 <div class="top-margin container">
+  <%= "<h3>Infelizmente não encontramos nada...</h3>".html_safe if @items.empty? %>
+
   <% @items.each do |item| %>    
     <div class="card col-md-3">
       
@@ -7,6 +9,9 @@
         <div class="description col-md-12">
           <span class="item-name col-md-12"><%= item.name %></span>  
           <span class="item-place col-md-12"><%= icon('map-marker') + "  "+ item.place.name %></span>
+        </div>
+        <div class="text-right col-md-12">
+          <span class="label label-<%= item.tag_list[0].to_s %>"><%= link_to (item.tag_list[0].to_s), category_path(item.tag_list[0].to_s) %></span>
         </div>
       
       </div>

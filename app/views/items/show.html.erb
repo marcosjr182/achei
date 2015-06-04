@@ -1,46 +1,43 @@
-<div class="top-margin page container">
-  <div class="row">
-  <div class="col-md-9">
+<div class="top-margin page container no-padding">
+  <div class="col-md-10 col-md-offset-1 item no-padding">
+  
+  <div class="map-wrapper col-md-12 no-padding">
+    <div id="map" data-lat="<%= @item.place.latitude %>" data-long="<%= @item.place.longitude %>" data-name="<%= @item.place.name %>" style='min-height: 150px;'></div>
+  </div>
+  
+  <div class="col-md-9 no-padding">
 
-    <div class="col-md-3">
-      <img src="http://placehold.it/200x200" class="col-md-12 img-full" alt="">  
-        
-      <div id="map" data-lat="<%= @item.place.latitude %>" data-long="<%= @item.place.longitude %>" data-name="<%= @item.place.name %>" style=' height: 170px;' class="col-md-12"></div>
-    </div>
-    
-    <div class='col-md-9'> 
-    
-      <div class="col-md-9 item-details">
-        <h3><%= @item.name %></h3>
-          
-        <div class="item-description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, iusto sint perferendis odio fugit assumenda ut beatae deleniti et autem porro quasi pariatur hic fugiat sapiente recusandae natus eius nesciunt. <br><br>
-          <%= @item.tag_list %>
-        </div>
-        
-        <div class="item-user pull-right">
-          <img src="http://placehold.it/32x32" class="img-circle" alt="">
-          <span> Fulano da Silva </span>
-        </div>
+    <div class="col-md-3 no-padding">
+      <img src="http://placehold.it/200x200" class="img-full" alt="">  
+      
+      <div class="item-user center">
+        <img src="http://placehold.it/32x32" class="img-circle" alt="">
+        <br> <span> Fulano da Silva </span>
       </div>
-
-      <div class="col-md-3 pull-right item-actions">
-        <span class="h5 col-md-12 text-center">opções</span>
-        <ul class="col-md-12 nav">
-          <li><%= link_to "Achei", new_proposal_path(item_id: @item.id), :remote => true, data: { toggle: "modal", target:'#modal'}, class:"btn btn-success col-md-12" %></li>
-          <li><a href="" class="btn btn-primary col-md-12 pull-right">Compartilhar</a></li>
-        </ul>
-      </div>  
     </div>
+    
+    <div class="col-md-9 item-details">
+      <h3><%= @item.name %></h3>
+        
+      <div class="item-description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, iusto sint perferendis odio fugit assumenda ut beatae deleniti et autem porro quasi pariatur hic fugiat sapiente recusandae natus eius nesciunt. <br><br>
+        <%= @item.tag_list %>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="col-md-3 pull-right item-actions">
+    <span class="h5 col-md-12 text-center">opções</span>
+    <ul class="col-md-12 nav">
+      <li><%= link_to "Achei", new_proposal_path(item_id: @item.id), :remote => true, data: { toggle: "modal", target:'#modal'}, class:"btn btn-success col-md-12" %></li>
+      <li><a href="" class="btn btn-primary col-md-12 pull-right">Compartilhar</a></li>
+    </ul>
+  </div>  
   </div>
 
-  <div class="col-md-3 comments">
-    <h4 class="col-md-12 center">Comentarios</h4>
-    <input class="col-md-10" />
-    <button class="col-md-2">/\</button>
-  </div>
-</div>
-</div>
+</div>  
+
 
 <%= javascript_tag do %>
   $(document).ready(function(){

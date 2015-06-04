@@ -6,6 +6,12 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    unless params[:search].nil?
+      @items = Item.search(params[:search]).order("created_at DESC")
+    else
+      @items = Item.all.order('created_at DESC')
+    end
+
   end
 
   # GET /items/1
@@ -21,10 +27,14 @@ class ItemsController < ApplicationController
   end
 
   def category
+    @items = Item.tagged_with(params[:tag_list])
+    
     if params[:tag_list].include? "Achados&Perdidos"
       @items = Item.tagged_with(["achados","perdidos"], any: true)
-    elsif params[:tag_list].include? "Classificados"
-      @items = Item.tagged_with(["achados","perdidos"], exclude: true)
+    end
+
+    if params[:tag_list].include? "Classificados"
+      @items = Item.tagged_with(["aluguel","venda","doação"], any: true)
     end
   end
 

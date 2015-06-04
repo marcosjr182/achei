@@ -33,11 +33,16 @@ body{
 .center{
   text-align: center;
 }
+.no-padding{
+  padding-left:0;
+  padding-right:0;
+}
 .top-margin{  
   margin-top: 50px;
 }
 .page{
   background:#F0EEED;
+  padding:0;
 }
 .page-header{
   margin-bottom: 0;
@@ -80,6 +85,9 @@ body{
   max-height: 200px;
   width: 100%;
 }
+.map-wrapper{
+padding:0;
+}
 
 .description{
   padding-left:5px;
@@ -111,11 +119,19 @@ body{
     z-index: 2;
   }
 }
-  
+.item{
+  background: #fff;
+  box-shadow: 0 0 2px #dcdcdc;
+}
 .item-details{
   padding-top:15px;
 }
-
+.item-user{
+  .img-circle{
+    width: 60%;
+    margin: 10px auto;
+  }
+}
 .item-actions{
   height: 100%;
   padding:5px;
@@ -156,7 +172,6 @@ h5,
 h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     margin: 0 0 15px;
-    text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
@@ -165,23 +180,32 @@ h6,
   height: 5px;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
-  
-  &.perdidos{ 
-    background: #549F93;
-  }
-  &.achados{ 
-    background: #71A86B;
-  }
-  &.venda{ 
-    background: #53A84A;
-  }
-  &.aluguel{ 
-    background: #008996;
-  }
-  &.doacao{ 
-    background: #C1DD9F;
+}  
+.label{
+  a{
+    color:#fff;
+    &:hover{
+      color:#fff;
+      text-decoration: none;
+    }
   }
 }
+.label-perdidos{ 
+  background: #549F93;
+}
+.label-achados{ 
+  background: #71A86B;
+}
+.label-venda{ 
+  background: #53A84A;
+}
+.label-aluguel{ 
+  background: #008996;
+}
+.label-doacao{ 
+  background: #C1DD9F;
+}
+
 .category-wrap{
   margin-top: 6em;
   .category{

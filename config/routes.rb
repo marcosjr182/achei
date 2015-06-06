@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :proposals, :except => [:new]
   get "proposals/new/:item_id", to: "proposals#new", as: "new_proposal"
 
+
   devise_for :users
   
   resources :places

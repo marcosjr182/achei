@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :items
   has_many :commentaries
+  has_many :proposals
 
 end

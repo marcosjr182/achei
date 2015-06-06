@@ -1,4 +1,6 @@
 <div class="container">
+  <div class="col-md-10 col-md-offset-1">
+    
   <%= "<h4 class='center'>Não há items cadastrados no momento.</h4>".html_safe if  @items.nil? || @items.empty? %>
   <header class="col-md-12 page-header">
     <h2><%= params[:tag_list] %></h2>
@@ -20,4 +22,5 @@
       </div>
     </div>
   <% end %>
+  </div>
 </div>

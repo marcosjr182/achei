@@ -1,31 +1,21 @@
-<h1>Listing proposals</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Owner</th>
-      <th>Buyer</th>
-      <th>Item</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="page container">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="page-header col-md-12"><h2>Mensagens</h2></div>
+    <div id="proposals" class="col-md-12">
     <% @proposals.each do |proposal| %>
-      <tr>
-        <td><%= proposal.description %></td>
-        <td><%= proposal.owner %></td>
-        <td><%= proposal.buyer %></td>
-        <td><%= proposal.item %></td>
-        <td><%= link_to 'Show', proposal %></td>
-        <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
-        <td><%= link_to 'Destroy', proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="proposal col-md-12">
+    <div class="col-md-2 proposal-item">
+      <img src="http://placehold.it/50x50" class="img-circle" alt="">
+    </div>
+    <div class="col-md-10">
+      <div class="h4 col-md-12"><%= proposal.item.name %></div>
+      <div class="col-md-12"><%= proposal.description %></div>
+      <span class="pull-right"><%= proposal.owner.name %> > <%= proposal.buyer.name %></span>
+    </div>    
+    
+    </div>
     <% end %>
-  </tbody>
-</table>
+    </div>
+  </div>
 
-<br>
-
-<%= link_to 'New Proposal', new_proposal_path %>
+</div>

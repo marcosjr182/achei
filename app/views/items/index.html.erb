@@ -1,4 +1,5 @@
 <div class="top-margin container">
+  <div class="col-md-10 col-md-offset-1">
   <%= "<h3>Infelizmente não encontramos nada...</h3>".html_safe if @items.empty? %>
 
   <% @items.each do |item| %>    
@@ -17,4 +18,5 @@
       </div>
       </div>
   <% end %>
+  </div>
 </div>

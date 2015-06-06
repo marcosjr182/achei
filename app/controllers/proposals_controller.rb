@@ -10,7 +10,9 @@ class ProposalsController < ApplicationController
   end
 
   def show
-    respond_with(@proposal)
+    @owner = User.find(@proposal.owner_id)
+    @buyer = User.find(@proposal.buyer_id)
+    @item = Item.find(@proposal.item_id)
   end
 
   def new

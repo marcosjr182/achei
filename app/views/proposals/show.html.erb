@@ -7,17 +7,17 @@
 
 <p>
   <strong>Owner:</strong>
-  <%= @proposal.owner %>
+  <%= @owner.name %>
 </p>
 
 <p>
   <strong>Buyer:</strong>
-  <%= @proposal.buyer %>
+  <%= @buyer.name %>
 </p>
 
 <p>
   <strong>Item:</strong>
-  <%= @proposal.item %>
+  <%= @item.name %>
 </p>
 
 <%= link_to 'Edit', edit_proposal_path(@proposal) %> |

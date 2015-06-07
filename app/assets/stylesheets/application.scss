@@ -39,8 +39,11 @@ body{
   padding-right:0;
 }
 .top-margin{  
-  margin-top: 50px;
+  padding-top: 50px;
+  height: 100%;
+  position:absolute;
 }
+
 .last{
   border:0;
 }
@@ -63,6 +66,16 @@ body{
   border-bottom:1px solid #ddd;
   .info{
     padding-top:15px;
+  }
+}
+.search{
+  margin-top:15px;
+}
+.search-input{
+  border:1px solid $home_green;
+  border-radius:2px;
+  &:focus{
+    box-shadow: none;
   }
 }
 .status{
@@ -257,7 +270,15 @@ h6,
     text-align: center;
     a{
       color: $home_green;
+      &:hover{
+        text-decoration: none;
+      }
     }
+
+    &:hover{
+      background: #E8E8E8;
+    }
+
   }
 }
 .btn-action {

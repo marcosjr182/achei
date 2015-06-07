@@ -9,17 +9,14 @@
     
     <div class="col-md-6">
       <div class="category">
-        <%= link_to "Classificiados", category_path("Classificados") %>
+        <%= link_to "Classificados", category_path("Classificados") %>
       </div>
     </div>
     
-    <div class="search col-md-8 col-md-offset-2">
+    <div class="search col-md-10 col-md-offset-1 ">
       <%= form_tag items_path, method:"get", class:"form-inline" do |f| %>
-          <div class="input-group col-md-6 col-md-offset-3">
-            <%= text_field_tag :search, params[:search], class:"form-control", placeholder: "Buscar Anuncio" %>
-            <span class="input-group-btn">
-              <%= button_tag icon('search').html_safe, class:"btn btn-default" %>
-            </span>
+          <div class="input-group col-md-12 no-padding">
+            <%= text_field_tag :search, params[:search], class:"input-lg col-md-12 search-input", placeholder: "Buscar Anuncio" %>
           </div>
       <% end %>
     </div>

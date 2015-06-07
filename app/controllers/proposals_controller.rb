@@ -5,8 +5,7 @@ class ProposalsController < ApplicationController
   respond_to :html
 
   def index
-    @proposals = Proposal.all
-    respond_with(@proposals)
+    @proposals = current_user.sent_proposals
   end
 
   def show
@@ -26,6 +25,7 @@ class ProposalsController < ApplicationController
 
   def create
     @proposal = Proposal.new(proposal_params)
+    @proposal.status = "pendente"
     @proposal.save
     respond_with(@proposal)
   end

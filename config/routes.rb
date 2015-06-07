@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   resources :places
 
   resources :items
+  
+  scope path: "/admin" do
+    get "items", to: "items#admin", as: "admin_items"
+  end
 
   get "/category/:tag_list", to: "items#category", as: "category"
 

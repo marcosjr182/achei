@@ -17,25 +17,31 @@
     </div>
     
     <div class="col-md-9 item-details">
-      <h3><%= @item.name %></h3>
-        
-      <div class="item-description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, iusto sint perferendis odio fugit assumenda ut beatae deleniti et autem porro quasi pariatur hic fugiat sapiente recusandae natus eius nesciunt. <br><br>
-        <%= @item.tag_list %>
+      <h3 class="col-md-10"><%= @item.name %></h3>
+      <div class="col-md-1">
+        <span class="label label-<%= @item.tag %>"><%= link_to (@item.tag_list.first), category_path(@item.tag_list.first) %></span>
       </div>
+
+      <div class="item-description col-md-12">
+        <p><%= @item.description %> <br><br>
+        </p>
+      </div>
+
+      <%= custom_details(@item) %>
+
     </div>
 
   </div>
   
   <div class="col-md-3 pull-right item-actions">
-    <span class="h5 col-md-12 text-center">opções</span>
-    <ul class="col-md-12 nav">
-      <li><%= link_to "Achei", new_proposal_path(item_id: @item.id), :remote => true, data: { toggle: "modal", target:'#modal'}, class:"btn btn-success col-md-12" %></li>
-      <li><a href="" class="btn btn-primary col-md-12 pull-right">Compartilhar</a></li>
+    <ul class="col-md-12 nav no-padding">
+      <%= action_options(@item) %>
+      <li><a href="" class="btn">Compartilhar FB</a></li>
+      <li><a href="" class="btn">Compartilhar TW</a></li>
     </ul>
   </div>  
+  
   </div>
-
 </div>  
 
 

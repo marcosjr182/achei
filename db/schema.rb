@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 20150604205744) do
     t.integer  "place_id"
     t.integer  "user_id"
     t.text     "description"
+    t.string   "payment"
+    t.string   "reward"
+    t.boolean  "flexible"
   end
 
   add_index "items", ["place_id"], name: "index_items_on_place_id"
@@ -47,8 +50,7 @@ ActiveRecord::Schema.define(version: 20150604205744) do
 
   create_table "proposals", force: true do |t|
     t.text     "description"
-    t.string   "reward"
-    t.boolean  "flexible"
+    t.string   "status"
     t.integer  "owner_id"
     t.integer  "buyer_id"
     t.integer  "item_id"

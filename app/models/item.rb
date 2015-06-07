@@ -10,5 +10,8 @@ class Item < ActiveRecord::Base
     where("name LIKE ?", "%#{search}%") 
     where("description LIKE ?", "%#{search}%")
   end
+  def tag
+    ActiveSupport::Inflector.transliterate(self.tag_list.first)
+  end
 
 end

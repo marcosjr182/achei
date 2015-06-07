@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:category]
+  before_action :authenticate_user!, except: [:category, :index]
   # GET /items
   # GET /items.json
   def index
@@ -11,7 +11,10 @@ class ItemsController < ApplicationController
     else
       @items = Item.all.order('created_at DESC')
     end
+  end
 
+  def admin
+    @items = Item.where(user: current_user)
   end
 
   # GET /items/1

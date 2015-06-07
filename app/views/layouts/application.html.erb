@@ -21,8 +21,9 @@
       <% if user_signed_in? %>
         
         <li> <%= link_to "Mensagens", proposals_path() %></li>
+        <li> <%= link_to "Meus Anuncios", admin_items_path() %></li>
 
-        <li><%= link_to "Meu Perfil" , "#" %></li>
+        <li><%= link_to "Meu Perfil" , edit_user_registration_path %></li>
         <li><%= link_to "Sair" , destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "Cadastro", new_user_registration_path %></li>

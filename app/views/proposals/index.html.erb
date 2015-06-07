@@ -2,18 +2,26 @@
   <div class="col-md-10 col-md-offset-1">
     <div class="page-header col-md-12"><h2>Mensagens</h2></div>
     <div id="proposals" class="col-md-12">
+    <%= "Sem mensagens no momento." if @proposals.nil? %>
     <% @proposals.each do |proposal| %>
-    <div class="proposal col-md-12">
-    <div class="col-md-2 proposal-item">
-      <img src="http://placehold.it/50x50" class="img-circle" alt="">
+    <div class="<%= 'last' if proposal == @proposals.last %> proposal col-md-12 no-padding ">
+    <div class="col-md-2 proposal-item no-padding">
+      <img src="http://placehold.it/50x50" class="img-full" alt="">
     </div>
-    <div class="col-md-10">
+    <div class="col-md-8 info">
       <div class="h4 col-md-12"><%= proposal.item.name %></div>
       <div class="col-md-12"><%= proposal.description %></div>
       <span class="pull-right"><%= proposal.owner.name %> > <%= proposal.buyer.name %></span>
-    </div>    
-    
     </div>
+    <div class="col-md-2 status">
+      <%= content_tag :div, proposal.status , class:"col-md-12 #{proposal.status}" %>
+      <br><br>
+      <%= link_to icon('trash-o')+" Excluir", proposal_path(proposal),class:'btn btn-danger col-md-12' unless proposal.status == "aprovado" %>
+      <br><br>
+      <%= link_to icon('envelope-o')+" Contato", "mailto:#{proposal.owner.email}",class:'btn pendente col-md-12', target:"new" if proposal.status == "aprovado" %>
+    </div>
+    </div>
+    
     <% end %>
     </div>
   </div>

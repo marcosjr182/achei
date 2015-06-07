@@ -8,4 +8,12 @@ class User < ActiveRecord::Base
   has_many :commentaries
   has_many :proposals
 
+  def inbox
+    Proposal.where(owner_id: self.id)
+    Proposal.where(buyer_id: self.id)
+  end
+  def sent_proposals
+    Proposal.where(buyer_id: self.id)
+  end
+
 end

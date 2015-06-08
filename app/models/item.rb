@@ -4,6 +4,7 @@ class Item < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_many :commentaries
+  mount_uploader :avatar, AvatarUploader
   acts_as_taggable 
 
   def self.search(search)

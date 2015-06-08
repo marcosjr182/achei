@@ -1,4 +1,4 @@
-<div class="top-margin container ">
+<div class=" container ">
   <div class="col-md-10 col-md-offset-1 item no-padding">
   
   <div class="map-wrapper col-md-12 no-padding">
@@ -8,11 +8,12 @@
   <div class="col-md-9 no-padding">
 
     <div class="col-md-3 no-padding">
-      <img src="http://placehold.it/200x200" class="img-full" alt="">  
+      <%= cl_image_tag @item.avatar, class:"img-full" %>
       
       <div class="item-user center">
         <img src="http://placehold.it/32x32" class="img-circle" alt="">
-        <br> <span> Fulano da Silva </span>
+        <%= cl_image_tag @item.user.avatar, class:"img-circle" %>
+        <br> <span> <%= @item.user.name %> </span>
       </div>
     </div>
     

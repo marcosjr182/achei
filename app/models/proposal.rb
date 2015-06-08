@@ -13,4 +13,12 @@ class Proposal < ActiveRecord::Base
   def item
     Item.find(self.item_id)
   end
+
+  def approve
+    self.status = "aprovado"
+    Proposal.where.not(id: self.id).each do |p|
+      p.status = "recusado"
+    end
+  end
+  
 end

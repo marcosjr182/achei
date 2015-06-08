@@ -18,7 +18,10 @@
     <%= f.association :place %><br>
   </div>
   <div class="field">
-    <%= f.association :category %><br>
+    <%= f.input :tag_list, collection: @tags %><br>
+  </div>
+  <div class="field">
+    <%= f.input :avatar %><br>
   </div>
   <div class="actions">
     <%= f.submit %>

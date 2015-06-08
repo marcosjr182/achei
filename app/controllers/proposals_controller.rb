@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ProposalsController < ApplicationController
-  before_action :set_proposal, only: [:show, :edit, :update, :destroy]
+  before_action :set_proposal, only: [ :edit, :update, :destroy]
 
   respond_to :html
 
@@ -9,9 +9,8 @@ class ProposalsController < ApplicationController
   end
 
   def show
-    @owner = User.find(@proposal.owner_id)
-    @buyer = User.find(@proposal.buyer_id)
-    @item = Item.find(@proposal.item_id)
+    @item = Item.find(params[:id])
+    @proposals = Proposal.where(item_id: @item.id)
   end
 
   def new

@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def admin
-    @items = Item.where(user: current_user)
+    @items = Item.where(user_id: current_user.id)
   end
 
   # GET /items/1
@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @tags = ["achados", "perdidos", "doação", "venda", "aluguel"]
     @places = Place.all
   end
 
@@ -50,6 +51,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
+    @item.user = current_user
     
     respond_to do |format|
       if @item.save
@@ -94,6 +96,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :place_id, :user_id, :tag_list)
+      params.require(:item).permit(:name, :place_id, :user_id, :tag_list, :avatar)
     end
 end

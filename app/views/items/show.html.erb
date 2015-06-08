@@ -11,7 +11,6 @@
       <%= cl_image_tag @item.avatar, class:"img-full" %>
       
       <div class="item-user center">
-        <img src="http://placehold.it/32x32" class="img-circle" alt="">
         <%= cl_image_tag @item.user.avatar, class:"img-circle" %>
         <br> <span> <%= @item.user.name %> </span>
       </div>

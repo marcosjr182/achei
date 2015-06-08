@@ -19,7 +19,7 @@
     <%= f.input :password, autocomplete: "off", hint: "deixe em branco se não quiser alterar", required: false, label: "Nova Senha" %>
     <%= f.input :password_confirmation,label:"Confirme sua nova senha", required: false %>
     <%= f.input :current_password, hint: "digite sua senha atual para confirmar", required: true %>
-
+    <%= f.hidden_field :avatar_cache %>
     <%= f.input :avatar %>
   </div>
 

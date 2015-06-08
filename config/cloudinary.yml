@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dmljybsve
+  api_key: '936338977832842'
+  api_secret: _ocryGRQ7yvojqXxfM_AKxdVjjg
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dmljybsve
+  api_key: '936338977832842'
+  api_secret: _ocryGRQ7yvojqXxfM_AKxdVjjg
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dmljybsve
+  api_key: '936338977832842'
+  api_secret: _ocryGRQ7yvojqXxfM_AKxdVjjg
+  enhance_image_tag: true
+  static_image_support: false

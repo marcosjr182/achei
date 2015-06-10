@@ -6,7 +6,7 @@
     <% @proposals.each do |proposal| %>
     <div class="<%= 'last' if proposal == @proposals.last %> proposal col-md-12 no-padding ">
     <div class="col-md-2 proposal-item no-padding">
-      <img src="http://placehold.it/50x50" class="img-full" alt="">
+      <%= image_tag proposal.item.avatar, class:"img-full" %>
     </div>
     <div class="col-md-8 info">
       <div class="h4 col-md-12"><%= proposal.item.name %></div>

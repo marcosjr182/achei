@@ -26,7 +26,7 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.new(proposal_params)
     @proposal.status = "pendente"
     @proposal.save
-    respond_with(@proposal)
+    redirect_to item_path(@proposal.item)
   end
 
   def update

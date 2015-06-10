@@ -14,7 +14,7 @@ User.create(name: "Usuario1", email: "adminaaa@admin.com", password: "admaainadm
 
 (1...15).each do |i|
   place = Place.create(name: "IMD #{i}", latitude:-5.8325565, longitude: -35.205342 )
-  item = Item.create(name: "Objeto Voador #{i}", place: place, user: User.last)
+  item = Item.create(name: "Objeto Voador #{i}", place: place, user: User.last,description: "Descrição do anuncio")
   item.tag_list.add(tags[Random.new.rand(0..4)])
   item.save
 end

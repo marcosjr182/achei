@@ -2,7 +2,8 @@
 <div class="col-md-10 col-md-offset-1">
   
   <div class="page-header col-md-12 ">
-    <h2>Meus Anuncios</h2>
+    <h2 class="col-md-8">Meus Anuncios</h2>
+    <div class="pull-right"><%= link_to "Novo Anuncio", new_item_path, class:"btn btn-action" %></div>
   </div>
 
   <%= "<h3>Você ainda não publicou nada...</h3>".html_safe if @items.empty? %>
@@ -11,13 +12,15 @@
   <% @items.each do |item| %>    
     <div class="<%= 'last' if item == @items.last %> proposal col-md-12 no-padding ">
     <div class="col-md-2 no-padding">
-        <%= link_to cl_image_tag(item.avatar, class: "item-card-img"), item_url(item) %>  
+        <%= link_to image_tag(item.avatar, class: "img-full item-card-img"), item_url(item) %>  
     </div>
     <div class="col-md-8 info">
         <div class="h4 col-md-12"><%= item.name %></div>
         <div class="col-md-12"><%= item.description %></div>
     </div>
     <div class="col-md-2 status">
+      <%= link_to icon('edit')+" editar", edit_item_path(item),class:'btn btn-warning col-md-12' %>
+      <br><br>
       <%= link_to icon('trash-o')+" Excluir", item_path(item),class:'btn btn-danger col-md-12' %>
       <br><br>
       <%= link_to "Propostas", proposal_path(item.id),class:'btn aprovado col-md-12' %>

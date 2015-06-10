@@ -12,16 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.input :name %><br>
+    <%= f.input :name, label: "Nome"%><br>
   </div>
   <div class="field">
-    <%= f.association :place %><br>
+    <%= f.input :description, label: "Descrição" %><br>
   </div>
   <div class="field">
-    <%= f.input :tag_list, collection: @tags %><br>
+    <%= f.association :place, label: "Local mais próximo" %><br>
   </div>
   <div class="field">
-    <%= f.input :avatar %><br>
+    <%= f.input :tag_list, label: "Categoria", collection: @tags %><br>
+  </div>
+  
+  <div class="field">
+    <%= f.input :reward, label: "Recompensa" %>
+  </div>
+  
+  <div class="field">
+    <%= f.input :flexible, label: "O valor é negociável?" %>
+  </div>
+
+  <div class="field">
+    <%= f.input :avatar, label:"Imagem" %><br>
   </div>
   <div class="actions">
     <%= f.submit %>

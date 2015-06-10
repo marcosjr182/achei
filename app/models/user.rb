@@ -8,7 +8,12 @@ class User < ActiveRecord::Base
   has_many :commentaries
   has_many :proposals
   mount_uploader :avatar, AvatarUploader
-  
+  before_save :default
+
+  def default
+    self.avatar ||= "sem_imagem.png"
+  end
+
   def inbox
     Proposal.where(owner_id: self.id)
     Proposal.where(buyer_id: self.id)

@@ -11,10 +11,10 @@
     <% tag = ActiveSupport::Inflector.transliterate(item.tag_list[0].to_s) %> 
     <div class="card col-md-3">  
       <div class="item-card col-md-12">
-          <%= link_to image_tag("http://placehold.it/200x200", class: "item-card-img"), item_url(item) %>  
+          <%= link_to image_tag(item.avatar, class: "item-card-img img-full"), item_url(item) %>  
         <div class="description col-md-12">
           <span class="item-name col-md-12"><%= item.name %></span>  
-          <span class="item-place col-md-12"><%= icon('map-marker') + "  "+ item.place.name %></span>
+          
         </div>
 
         <div class="text-right col-md-12">

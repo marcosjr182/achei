@@ -46,7 +46,6 @@ gem 'devise'
 gem 'omniauth-facebook'
 
 gem 'carrierwave'
-gem 'cloudinary'
 
 gem 'underscore-rails'
 

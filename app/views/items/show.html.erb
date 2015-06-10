@@ -1,17 +1,17 @@
 <div class=" container ">
   <div class="col-md-10 col-md-offset-1 item no-padding">
-  
+  <% if @item.tag == "perdidos" || @item.tag == "achados" %>
   <div class="map-wrapper col-md-12 no-padding">
     <div id="map" data-lat="<%= @item.place.latitude %>" data-long="<%= @item.place.longitude %>" data-name="<%= @item.place.name %>" style='min-height: 150px;'></div>
   </div>
-  
+  <% end %>
   <div class="col-md-9 no-padding">
 
     <div class="col-md-3 no-padding">
-      <%= cl_image_tag @item.avatar, class:"img-full" %>
+      <%= image_tag @item.avatar, class:"img-full" %>
       
       <div class="item-user center">
-        <%= cl_image_tag @item.user.avatar, class:"img-circle" %>
+        <%= image_tag @item.user.avatar, class:"img-circle" %>
         <br> <span> <%= @item.user.name %> </span>
       </div>
     </div>
@@ -36,8 +36,15 @@
   <div class="col-md-3 pull-right item-actions">
     <ul class="col-md-12 nav no-padding">
       <%= action_options(@item) %>
-      <li><a href="" class="btn">Compartilhar FB</a></li>
-      <li><a href="" class="btn">Compartilhar TW</a></li>
+      <li><br><br>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share_save"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END --></li>
     </ul>
   </div>  
   

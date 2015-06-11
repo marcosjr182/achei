@@ -23,8 +23,31 @@
       <br><br>
       <%= link_to icon('trash-o')+" Excluir", item_path(item),class:'btn btn-danger col-md-12' %>
       <br><br>
-      <%= link_to "Propostas", proposal_path(item.id),class:'btn aprovado col-md-12' %>
+      <%= link_to "Respostas", "#proposals",onclick: "openProposals(#{item.id});",class:'btn aprovado col-md-12' %>
     </div>
+    </div>
+
+    <div class="col-md-12 item-proposals" data-item="<%= item.id %>"> 
+      <% @proposals = Proposal.where(item_id: item.id) %>
+      <% if @proposals.empty? %>
+      <%= "<div class='col-md-10 col-md-offset-1'><h4>Não há respostas para este item.</h4></div>".html_safe %>
+      <% else %>
+      <% @proposals.each do |p| %>
+        <div class="col-md-12 proposal">
+          <div class="col-md-2">
+            <%= image_tag p.item.avatar, class:"img-circle" %>
+          </div>
+          <div class="col-md-8">
+            <%= p.description %>
+          </div>
+          <div class="col-md-2 status">
+            <%= link_to "Aceitar", "#", class:"btn btn-success col-md-12" %>
+            <br><br>
+            <%= link_to "Recusar", "#", class:"btn recusado col-md-12" %>
+          </div>
+        </div>  
+      <% end %>
+      <% end %>
     </div>
   <% end %>
   </div>

@@ -31,9 +31,18 @@ body{
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   background: $gray;
 }
+.open{
+  display: block;
+}
 .footer{
   margin-top: 20px;
   margin-bottom: 0;
+}
+.ae-fields{
+  display: none;
+}
+.cl-fields{
+  display: none;
 }
 .center{
   text-align: center;
@@ -175,7 +184,13 @@ padding:0;
     text-transform: uppercase;
   }
 }
+.item-proposals{
+  display: none;
+}
 
+.img-circle{
+  max-width: 90%;
+}
 .img-full{
   width: 100%;
   min-height:150px;

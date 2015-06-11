@@ -14,28 +14,37 @@
   <div class="field">
     <%= f.input :name, label: "Nome"%><br>
   </div>
+  
   <div class="field">
-    <%= f.input :description, label: "Descrição" %><br>
-  </div>
-  <div class="field">
-    <%= f.association :place, label: "Local mais próximo" %><br>
-  </div>
-  <div class="field">
-    <%= f.input :tag_list, label: "Categoria", collection: @tags %><br>
+    <%= f.input :description, label: "Descrição do anúncio" %><br>
   </div>
   
   <div class="field">
-    <%= f.input :reward, label: "Recompensa" %>
+    <%= f.input :avatar, label:"Imagem do anúncio" %><br>
   </div>
   
   <div class="field">
-    <%= f.input :flexible, label: "O valor é negociável?" %>
+    <%= f.input :tag_list, label: "Categoria", collection: @tags, required: true %><br>
+  </div>
+  
+  <div class="ae-fields">
+    <div class="field">
+      <%= f.input :reward, label: "Recompensa (deixe em branco se não houver)" %>
+    </div>
+    <div class="field">
+      <%= f.association :place, label: "Local mais próximo" %><br>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.input :avatar, label:"Imagem" %><br>
+  <div class="cl-fields">
+    
+    <div class="field">
+      <%= f.input :flexible, label: "O valor é negociável?" %>
+    </div>
+    
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar", class:"btn btn-default" %>
   </div>
 <% end %>

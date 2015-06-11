@@ -22,6 +22,17 @@
 var ready = function(){
   $("#modal").appendTo('body');
 
+  $('#item_tag_list').change(function(event) {
+    var value = $('#item_tag_list').val();
+    console.log(value);
+    if ( value == "achados" || value == "perdidos" || value == "doação"){
+      $('.cl-fields').hide();
+      $('.ae-fields').show();
+    } else {
+      $('.cl-fields').show();
+      $('.ae-fields').hide();
+    }
+  });
   
 }
 
@@ -58,3 +69,9 @@ $(window).scroll(function() {
     $('.navbar').addClass('navbar-shadow');
   }
 });
+
+function openProposals(item){
+  $('.item-proposals').hide();
+  $('.item-proposals[data-item="'+item+'"]').show();
+
+};

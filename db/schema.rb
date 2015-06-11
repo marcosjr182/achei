@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150607232546) do
+ActiveRecord::Schema.define(version: 20150611130255) do
 
   create_table "commentaries", force: true do |t|
     t.integer  "item_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150607232546) do
     t.string   "reward"
     t.boolean  "flexible"
     t.string   "avatar"
+    t.float    "value"
   end
 
   add_index "items", ["place_id"], name: "index_items_on_place_id"

@@ -75,6 +75,13 @@ body{
   color: #585BA3;
   padding: 10px 18px;  
 }
+.price{
+  text-align: center;
+  font-size:30px;
+  font-weight:bolder;
+  color: $home_green;
+}
+
 .page{
   background:#F0EEED;
   padding:0;
@@ -129,6 +136,7 @@ body{
     padding:6px 12px;
     border:2px solid $red;
     color:$red;
+    background:white;
     border-radius:2px;
   }
 }
@@ -189,7 +197,7 @@ padding:0;
 }
 
 .img-circle{
-  max-width: 90%;
+  padding:10px 10px;
 }
 .img-full{
   width: 100%;

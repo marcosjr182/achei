@@ -1,3 +1,6 @@
+<div class="col-md-12 item">
+  
+<%= "<div id='tag' style='display:none;'>#{@item.tag}</div>".html_safe unless @item.tag_list[0].nil? %>
 <%= simple_form_for(@item) do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
@@ -27,6 +30,7 @@
     <%= f.input :tag_list, label: "Categoria", collection: @tags, required: true %><br>
   </div>
   
+
   <div class="ae-fields">
     <div class="field">
       <%= f.input :reward, label: "Recompensa (deixe em branco se não houver)" %>
@@ -37,7 +41,9 @@
   </div>
 
   <div class="cl-fields">
-    
+    <div class="field">
+      <%= f.input :value, label: "Preço" %>
+    </div>
     <div class="field">
       <%= f.input :flexible, label: "O valor é negociável?" %>
     </div>
@@ -48,3 +54,5 @@
     <%= f.submit "Salvar", class:"btn btn-default" %>
   </div>
 <% end %>
+</div>
+

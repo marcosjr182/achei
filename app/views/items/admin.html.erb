@@ -32,18 +32,19 @@
       <% if @proposals.empty? %>
       <%= "<div class='col-md-10 col-md-offset-1'><h4>Não há respostas para este item.</h4></div>".html_safe %>
       <% else %>
+      <div class="col-md-12 h4">Respostas:</div>
       <% @proposals.each do |p| %>
         <div class="col-md-12 proposal">
           <div class="col-md-2">
-            <%= image_tag p.item.avatar, class:"img-circle" %>
+            <%= image_tag p.buyer.avatar, class:"img-circle col-md-10 col-md-offset-1" %>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8" style="padding-top:10px;">
             <%= p.description %>
           </div>
           <div class="col-md-2 status">
-            <%= link_to "Aceitar", "#", class:"btn btn-success col-md-12" %>
+            <%= button_tag "Aceitar", class:"btn btn-success col-md-12" %>
             <br><br>
-            <%= link_to "Recusar", "#", class:"btn recusado col-md-12" %>
+            <%= button_tag "Recusar", class:"btn recusado col-md-12" %>
           </div>
         </div>  
       <% end %>

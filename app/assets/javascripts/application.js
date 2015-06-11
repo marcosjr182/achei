@@ -22,6 +22,16 @@
 var ready = function(){
   $("#modal").appendTo('body');
 
+  var tag = $('#tag').text();
+    console.log(tag);
+    if ( tag == "achados" || tag == "perdidos" || tag == "doação"){
+      $('.cl-fields').hide();
+      $('.ae-fields').toggle();
+    } else {
+      $('.cl-fields').show();
+      $('.ae-fields').hide();
+  }
+
   $('#item_tag_list').change(function(event) {
     var value = $('#item_tag_list').val();
     console.log(value);

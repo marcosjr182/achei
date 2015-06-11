@@ -23,7 +23,7 @@ module ItemsHelper
     ach_per += " "
     ach_per += item.reward unless item.reward.nil?
     ach_per += '</span></div>'
-    ach_per = '' if item.reward.nil?
+    ach_per = '' if item.reward.nil? || item.reward.empty?
     classificados = ""
     unless item.flexible.nil?
       flex = item.flexible ? "Sim" : "Não"
@@ -31,7 +31,12 @@ module ItemsHelper
       classificados += flex
       classificados += '</span>'
     end
-
+    unless item.value.nil?
+      classificados += '<span class="col-md-6 price">R$ '
+      classificados += item.value.to_s
+      classificados += '</span>'
+    end
+    
     return ach_per.html_safe if item.tag == "achados" || item.tag == "perdidos"
     return "" if item.tag == "doacao"
     return classificados.html_safe

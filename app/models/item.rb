@@ -22,7 +22,7 @@ class Item < ActiveRecord::Base
     User.find(self.user_id)
   end
 
-  def tag
+  def tag 
     ActiveSupport::Inflector.transliterate(self.tag_list.first)
   end
 

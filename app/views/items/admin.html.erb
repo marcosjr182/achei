@@ -2,8 +2,8 @@
 <div class="col-md-10 col-md-offset-1">
   
   <div class="page-header col-md-12 ">
-    <h2 class="col-md-8">Meus Anuncios</h2>
-    <div class="pull-right"><%= link_to "Novo Anuncio", new_item_path, class:"btn btn-action" %></div>
+    <h2 class="col-md-8">Meus Anúncios</h2>
+    <div class="pull-right"><%= link_to "Novo Anúncio", new_item_path, class:"btn btn-action" %></div>
   </div>
 
   <%= "<h3>Você ainda não publicou nada...</h3>".html_safe if @items.empty? %>
@@ -23,11 +23,11 @@
       <br><br>
       <%= link_to icon('trash-o')+" Excluir", item_path(item),class:'btn btn-danger col-md-12' %>
       <br><br>
-      <%= link_to "Respostas", "#proposals",onclick: "openProposals(#{item.id});",class:'btn aprovado col-md-12' %>
+      <%= link_to "Respostas", "#item-proposals",onclick: "openProposals(#{item.id});",class:'btn aprovado col-md-12' %>
     </div>
     </div>
 
-    <div class="col-md-12 item-proposals" data-item="<%= item.id %>"> 
+    <div id="item-proposals" class="col-md-12 item-proposals" data-item="<%= item.id %>"> 
       <% @proposals = Proposal.where(item_id: item.id) %>
       <% if @proposals.empty? %>
       <%= "<div class='col-md-10 col-md-offset-1'><h4>Não há respostas para este item.</h4></div>".html_safe %>

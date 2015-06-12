@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   
   resources :places
 
-  resources :items
+  resources :items 
+  
+  get "search", to: "home#search", as: "search_items"
   
   scope path: "/admin" do
     get "items", to: "items#admin", as: "admin_items"

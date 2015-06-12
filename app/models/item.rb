@@ -9,13 +9,13 @@ class Item < ActiveRecord::Base
   before_create :default
 
   def self.search(search)
-    where("name LIKE ? AND description LIKE ?", "%#{search}%","%#{search}%")
+    where("name LIKE ?","%#{search}%")
     #where("name LIKE ?", "%#{search}%") 
-    #where("description LIKE ?", "%#{search}%")
+    where("description LIKE ?", "%#{search}%")
   end
 
   def default
-    self.avatar = "sem_i"  
+    self.avatar = "sem_imagem.png"  
   end
 
   def user

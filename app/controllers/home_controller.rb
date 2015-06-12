@@ -5,4 +5,11 @@ class HomeController < ApplicationController
     @items = Item.new
   end
 
+  def search
+    unless params[:search].nil?
+      @items = Item.search(params[:search])
+    else
+      @items = Item.all.order('created_at DESC')
+    end
+  end
 end

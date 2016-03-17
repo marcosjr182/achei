@@ -1,28 +1,8 @@
-== README
+== Achei!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sistema de anúncios feito para a disciplina de Desenvolvimento Web I. 
 
-Things you may want to cover:
+---
+== Achei!
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Web board for students mainly focused on Lost&Found and 'Loan or Sell' posts. Developed as an project to Web Development I class.
